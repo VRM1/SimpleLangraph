@@ -4,7 +4,7 @@ A minimal, well-documented LangGraph multi-agent system to help you understand t
 
 ## 🎯 What This Is
 
-This is a **distilled version** of the NFL Fantasy Football multi-agent system, simplified to show the core LangGraph patterns without domain-specific complexity.
+A clean, distilled implementation of the core LangGraph patterns without any domain-specific complexity.
 
 - ✅ One simple agent (easily add more)
 - ✅ Tool-ready infrastructure (add your own tools)
@@ -377,7 +377,7 @@ if hasattr(response, 'tool_calls') and response.tool_calls:
     # Process tool calls
     for tool_call in response.tool_calls:
         # Execute the tool
-        # See player_stats_node.py in main codebase for full example
+        # Execute the tool and append the result to messages
 ```
 
 ### Adding a New LLM Provider
@@ -436,21 +436,9 @@ def initialize_llm():
 4. Create a second agent node following the pattern
 
 ### Advanced
-1. Study the parent NFL codebase to see multi-agent coordination
-2. Implement a planner/orchestrator pattern with multiple specialized agents
-3. Add custom routing logic with complex state conditions
-4. Integrate external data sources and APIs
-
-## 🔍 Key Differences from NFL System
-
-| Feature | NFL System | Simple System |
-|---------|-----------|---------------|
-| **Agents** | 3 specialized (Planner, PlayerStats, Defense) | 1 general agent |
-| **Data** | Pre-loaded NFL DataFrames | No data dependencies |
-| **Tools** | Pandas query execution, fuzzy matching | Simple examples (calculator, etc.) |
-| **Routing** | Complex multi-step (planning → specialized → synthesis) | Simple single-agent flow |
-| **State** | 15+ fields tracking plan, data, nodes called | 8 essential fields |
-| **Purpose** | Fantasy football analysis | Learning LangGraph fundamentals |
+1. Implement a planner/orchestrator pattern with multiple specialized agents
+2. Add custom routing logic with complex state conditions
+3. Integrate external data sources and APIs
 
 ## 🐛 Troubleshooting
 
@@ -486,7 +474,6 @@ llm:
 
 - **LangGraph Docs**: https://langchain-ai.github.io/langgraph/
 - **LangChain Docs**: https://python.langchain.com/docs/
-- **Parent NFL System**: See `../CLAUDE.md` for full multi-agent example
 
 ## 🤝 Contributing
 

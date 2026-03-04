@@ -5,7 +5,7 @@ This demonstrates the two-phase agent pattern:
 1. Phase 1 (optional): Tool calling - LLM decides what tools to use
 2. Phase 2: Structured output - LLM formats final response
 
-This is the core pattern used in the NFL system's specialized agents.
+This is the core pattern for building LangGraph agent nodes.
 """
 
 import logging
@@ -70,7 +70,7 @@ def create_simple_agent_node(llm):
             # # Check if LLM wants to call tools
             # if hasattr(tool_response, 'tool_calls') and tool_response.tool_calls:
             #     # Process tool calls here
-            #     # See player_stats_node.py in main codebase for full example
+            #     # Execute the tool and append the result to messages
             #     pass
 
             # ============================================
