@@ -1,0 +1,24 @@
+# Simple LangGraph Configuration
+# Choose your LLM provider: "ollama" or "openai"
+
+llm:
+  provider: "openai"  # Change to "openai" if using OpenAI
+
+  # Ollama settings (local LLM)
+  ollama:
+    model: "qwen3:14b"  # Or llama3, mistral, etc.
+    base_url: "http://localhost:11434"
+    temperature: 0.7
+
+  # OpenAI settings (requires OPENAI_API_KEY env var)
+  openai:
+    model: "gpt-4o-mini"
+    temperature: 0.7
+    api_key_env: "OPENAI_API_KEY"
+
+# Logging configuration
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  show_routing: false  # Show graph routing decisions
+  show_node_completion: false  # Show when nodes complete
+  show_llm_responses: true  # Show agent outputs with icons
